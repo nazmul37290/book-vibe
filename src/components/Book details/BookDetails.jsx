@@ -1,18 +1,34 @@
 import { useParams } from "react-router-dom";
 import useData from "../../Hooks/useData";
 import { useEffect, useState } from "react";
+import {
+  addToLocalStorage,
+  getFromLocalStorage,
+} from "../../utils/localStorage";
 
 const BookDetails = () => {
   const { bookId } = useParams();
   const { jsonData } = useData();
 
   const [bookDetails, setBookDetails] = useState({});
-  console.log(jsonData, bookId);
+
   useEffect(() => {
     const data = jsonData.find((book) => book.bookId == bookId);
     setBookDetails(data);
-    console.log(bookDetails);
   }, [jsonData]);
+
+  const handleAddToRead = () => {
+    addToLocalStorage("read", bookId);
+  };
+  const handleAddToWishlist = () => {
+    const readed = getFromLocalStorage("read");
+
+    if (readed.includes(bookId)) {
+      return alert("You have already read this book");
+    }
+    addToLocalStorage("wishlist", bookId);
+  };
+
   const {
     bookName,
     author,
@@ -75,8 +91,15 @@ const BookDetails = () => {
           </table>
         </div>
         <div className="card-actions  justify-start">
-          <button className="btn bg-white border-black">Read</button>
-          <button className="btn btn-primary">Wishlist</button>
+          <button
+            onClick={handleAddToRead}
+            className="btn bg-white border-black"
+          >
+            Read
+          </button>
+          <button onClick={handleAddToWishlist} className="btn btn-primary">
+            Wishlist
+          </button>
         </div>
       </div>
     </div>
