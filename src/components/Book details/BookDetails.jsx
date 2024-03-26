@@ -5,6 +5,7 @@ import {
   addToLocalStorage,
   getFromLocalStorage,
 } from "../../utils/localStorage";
+import { toast } from "react-toastify";
 
 const BookDetails = () => {
   const { bookId } = useParams();
@@ -24,7 +25,7 @@ const BookDetails = () => {
     const readed = getFromLocalStorage("read");
 
     if (readed.includes(bookId)) {
-      return alert("You have already read this book");
+      return toast.error("You have already read this book");
     }
     addToLocalStorage("wishlist", bookId);
   };
