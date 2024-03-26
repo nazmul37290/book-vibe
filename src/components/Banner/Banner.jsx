@@ -3,10 +3,7 @@ const Banner = () => {
     <div>
       <div className="hero space-y-5 rounded-2xl p-16 bg-base-200">
         <div className="hero-content flex-col lg:flex-row-reverse">
-          <img
-            src="/src/assets/images/bannerbook.png"
-            className="max-w-sm  rounded-lg "
-          />
+          <img src="bannerbook.png" className="max-w-sm  rounded-lg " />
           <div>
             <h1 className="text-5xl font-bold mb-10">
               Books to freshen up your bookshelf
