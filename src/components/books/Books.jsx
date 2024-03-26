@@ -1,8 +1,8 @@
-import { useJsonData } from "../../Hooks/useData";
+import useData from "../../Hooks/useData";
 import Book from "./Book";
 
 const Books = () => {
-  const { jsonData } = useJsonData();
+  const { jsonData } = useData();
   console.log(jsonData);
   return (
     <div className="mt-16 ">

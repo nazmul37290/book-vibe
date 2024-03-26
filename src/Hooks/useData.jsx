@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-export const useJsonData = () => {
+const useData = () => {
   const [jsonData, setJsonData] = useState([]);
   useEffect(() => {
     const loadData = async () => {
@@ -12,3 +12,5 @@ export const useJsonData = () => {
   }, []);
   return { jsonData };
 };
+
+export default useData;
