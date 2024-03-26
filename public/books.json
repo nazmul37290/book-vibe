@@ -1,0 +1,80 @@
+[
+  {
+    "bookId": 1,
+    "bookName": "The Catcher in the Rye",
+    "author": "J.D. Salinger",
+    "image": "https://i.ibb.co/zS64fTR/1.jpg",
+    "review": "A timeless coming-of-age novel that continues to resonate with readers.",
+    "totalPages": 224,
+    "rating": 4.6,
+    "category": "Fiction",
+    "tags": ["coming-of-age", "classic", "adolescence"],
+    "publisher": "Little, Brown and Company",
+    "yearOfPublishing": 1951
+  },
+  {
+    "bookId": 2,
+    "bookName": "To Kill a Mockingbird",
+    "author": "Harper Lee",
+    "image": "https://i.ibb.co/wMgRBzJ/2.jpg",
+    "review": "A poignant exploration of racial injustice and moral growth in the American South.",
+    "totalPages": 281,
+    "rating": 4.7,
+    "category": "Fiction",
+    "tags": ["classic", "race", "law"],
+    "publisher": "HarperCollins",
+    "yearOfPublishing": 1960
+  },
+  {
+    "bookId": 3,
+    "bookName": "The Great Gatsby",
+    "author": "F. Scott Fitzgerald",
+    "image": "https://i.ibb.co/R91xDJX/3.jpg",
+    "review": "An evocative portrayal of the Jazz Age, delving into themes of love, wealth, and the American Dream.",
+    "totalPages": 180,
+    "rating": 4.3,
+    "category": "Fiction",
+    "tags": ["classic", "romance", "wealth"],
+    "publisher": "Scribner",
+    "yearOfPublishing": 1925
+  },
+  {
+    "bookId": 4,
+    "bookName": "Sapiens: A Brief History of Humankind",
+    "author": "Yuval Noah Harari",
+    "image": "https://i.ibb.co/Brw83mn/4.png",
+    "review": "A captivating journey through the history of Homo sapiens, offering profound insights into human evolution.",
+    "totalPages": 443,
+    "rating": 4.8,
+    "category": "Non-fiction",
+    "tags": ["history", "anthropology", "science"],
+    "publisher": "Harper",
+    "yearOfPublishing": 2011
+  },
+  {
+    "bookId": 5,
+    "bookName": "The Subtle Art of Not Giving a F*ck",
+    "author": "Mark Manson",
+    "image": "https://i.ibb.co/XWtv8vN/5.jpg",
+    "review": "A refreshing take on self-help, advocating for a realistic and pragmatic approach to life.",
+    "totalPages": 212,
+    "rating": 4.2,
+    "category": "Non-fiction",
+    "tags": ["self-help", "motivation", "psychology"],
+    "publisher": "HarperOne",
+    "yearOfPublishing": 2016
+  },
+  {
+    "bookId": 6,
+    "bookName": "The Hitchhiker's Guide to the Galaxy",
+    "author": "Douglas Adams",
+    "image": "https://i.ibb.co/DD7kYZZ/6.webp",
+    "review": "A hilarious and inventive romp through the cosmos, blending science fiction with wit and absurdity.",
+    "totalPages": 193,
+    "rating": 4.6,
+    "category": "Science Fiction",
+    "tags": ["humor", "space", "adventure"],
+    "publisher": "Pan Books",
+    "yearOfPublishing": 1979
+  }
+]
