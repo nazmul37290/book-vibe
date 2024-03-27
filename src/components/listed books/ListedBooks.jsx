@@ -1,6 +1,15 @@
 import { IoIosArrowDown } from "react-icons/io";
+import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
+import "react-tabs/style/react-tabs.css";
+import { getFromLocalStorage } from "../../utils/localStorage";
+import useData from "../../Hooks/useData";
+import Card from "../card/Card";
 
 const ListedBooks = () => {
+  const readBooks = getFromLocalStorage("read");
+  const wishlistBooks = getFromLocalStorage("wishlist");
+  const { jsonData } = useData();
+
   return (
     <div className="mt-8">
       <h1 className="text-3xl text-center font-bold p-10 bg-gray-100 rounded-2xl">
@@ -32,6 +41,28 @@ const ListedBooks = () => {
         </div>
       </div>
       {/* tabs here */}
+
+      <Tabs>
+        <TabList>
+          <Tab>Read Books</Tab>
+          <Tab>Wishlist</Tab>
+        </TabList>
+
+        <TabPanel>
+          {readBooks.map((id, i) => {
+            const readBook = jsonData.find((book) => book.bookId == id);
+
+            return <Card key={i} readBook={readBook}></Card>;
+          })}
+        </TabPanel>
+        <TabPanel>
+          {wishlistBooks.map((id, i) => {
+            const wishlistBook = jsonData.find((book) => book.bookId == id);
+
+            return <Card key={i} readBook={wishlistBook}></Card>;
+          })}
+        </TabPanel>
+      </Tabs>
     </div>
   );
 };
