@@ -12,9 +12,15 @@ const ContactUs = () => {
               <div className="text-center lg:text-left">
                 <h1 className="text-2xl font-bold">Our Socials</h1>
                 <div className="py-6 flex gap-5 text-3xl">
-                  <FaFacebookSquare className="text-blue-600" />
-                  <FaInstagram className="text-orange-600" />
-                  <FaXTwitter />
+                  <a href="">
+                    <FaFacebookSquare className="text-blue-600" />
+                  </a>
+                  <a href="">
+                    <FaInstagram className="text-orange-600" />
+                  </a>
+                  <a href="">
+                    <FaXTwitter />
+                  </a>
                 </div>
               </div>
               <div className="card shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
