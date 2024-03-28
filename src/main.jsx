@@ -11,6 +11,7 @@ import Home from "./components/Homepage/Home.jsx";
 import BookDetails from "./components/Book details/BookDetails.jsx";
 import ErrorPage from "./components/error page/ErrorPage.jsx";
 import Faq from "./components/Faq/Faq.jsx";
+import ContactUs from "./components/contactUS/ContactUs.jsx";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -36,6 +37,10 @@ const router = createBrowserRouter([
       {
         path: "/faq",
         element: <Faq></Faq>,
+      },
+      {
+        path: "/contactUs",
+        element: <ContactUs></ContactUs>,
       },
     ],
   },

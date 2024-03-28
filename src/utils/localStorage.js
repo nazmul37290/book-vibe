@@ -3,7 +3,7 @@ import { toast } from "react-toastify";
 const addToLocalStorage = (section, item) => {
   const previousData = getFromLocalStorage(section);
   if (previousData.includes(item)) {
-    return toast.error("Already added");
+    return toast.error("It's already been added");
   }
 
   const newData = [...previousData, item];

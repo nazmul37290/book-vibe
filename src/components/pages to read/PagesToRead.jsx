@@ -7,6 +7,7 @@ import {
   YAxis,
   CartesianGrid,
   ResponsiveContainer,
+  Tooltip,
 } from "recharts";
 import { getFromLocalStorage } from "../../utils/localStorage";
 import useData from "../../Hooks/useData";
@@ -64,6 +65,7 @@ const PagesToRead = () => {
           <CartesianGrid strokeDasharray="3 3" />
           <XAxis dataKey="name" className="text-sms" />
           <YAxis />
+          <Tooltip></Tooltip>
           <Bar
             dataKey="pages"
             fill="#8884d8"
