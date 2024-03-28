@@ -59,7 +59,7 @@ const BookDetails = () => {
           <span className="font-semibold">Review: </span>
           {review}
         </p>
-        <p className="mt-4 ">
+        <p className="mt-4 flex flex-col lg:flex-row gap-2 items-center">
           <span>Tags:</span>
           {tags &&
             tags.map((tag, i) => (
