@@ -5,6 +5,8 @@ const Navbar = () => {
     { name: "Home", route: "/" },
     { name: "Listed Books", route: "/listedBooks" },
     { name: "Pages to Read", route: "/pagesToRead" },
+    { name: "FAQ", route: "/faq" },
+    { name: "Pages to Read", route: "/pagesToRead" },
   ];
   return (
     <div className="navbar bg-base-100">

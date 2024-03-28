@@ -4,11 +4,104 @@ import "react-tabs/style/react-tabs.css";
 import { getFromLocalStorage } from "../../utils/localStorage";
 import useData from "../../Hooks/useData";
 import Card from "../card/Card";
+import { useEffect, useState } from "react";
 
 const ListedBooks = () => {
   const readBooks = getFromLocalStorage("read");
   const wishlistBooks = getFromLocalStorage("wishlist");
   const { jsonData } = useData();
+  const [sortedReadBooks, setSortedReadBooks] = useState([]);
+  const [sortedWishBooks, setSortedWishBooks] = useState([]);
+
+  // listed read book objects from local storage ids
+  const readBooksList = [];
+  readBooks.map((id) => {
+    const readBook = jsonData.find((book) => book.bookId == id);
+    readBooksList.push(readBook);
+  });
+
+  // listed wishlist book objects from local storage ids
+  const readWishList = [];
+  wishlistBooks.map((id) => {
+    const wishBook = jsonData.find((book) => book.bookId == id);
+    readWishList.push(wishBook);
+  });
+
+  // set default data for read book display
+  useEffect(() => {
+    const displayReadBooks = [];
+    readBooks.map((id) => {
+      const readBookDetails = jsonData.find((book) => book.bookId == id);
+      displayReadBooks.push(readBookDetails);
+    });
+
+    setSortedReadBooks(displayReadBooks);
+  }, [jsonData]);
+
+  // set default data for read book display
+  useEffect(() => {
+    const displayWishBooks = [];
+    wishlistBooks.map((id) => {
+      const wishBookDetails = jsonData.find((book) => book.bookId == id);
+      displayWishBooks.push(wishBookDetails);
+    });
+
+    setSortedWishBooks(displayWishBooks);
+  }, [jsonData]);
+
+  // set data using sort for read books
+  const handleSort = (sortType) => {
+    if (sortType === "pages") {
+      const sortedBooks = readBooksList.sort((a, b) =>
+        a.totalPages > b.totalPages ? -1 : a.totalPages < b.totalPages ? 1 : 0
+      );
+
+      setSortedReadBooks(sortedBooks);
+    } else if (sortType === "rating") {
+      const sortedBooks = readBooksList.sort((a, b) =>
+        a.rating > b.rating ? -1 : a.rating < b.rating ? 1 : 0
+      );
+
+      setSortedReadBooks(sortedBooks);
+    } else if (sortType === "publishYear") {
+      const sortedBooks = readBooksList.sort((a, b) =>
+        a.yearOfPublishing > b.yearOfPublishing
+          ? -1
+          : a.yearOfPublishing < b.yearOfPublishing
+          ? 1
+          : 0
+      );
+
+      setSortedReadBooks(sortedBooks);
+    }
+  };
+
+  // set data using sort for wish books
+  const handleWishSort = (sortType) => {
+    if (sortType === "pages") {
+      const sortedBooks = readWishList.sort((a, b) =>
+        a.totalPages > b.totalPages ? -1 : a.totalPages < b.totalPages ? 1 : 0
+      );
+
+      setSortedWishBooks(sortedBooks);
+    } else if (sortType === "rating") {
+      const sortedBooks = readWishList.sort((a, b) =>
+        a.rating > b.rating ? -1 : a.rating < b.rating ? 1 : 0
+      );
+
+      setSortedWishBooks(sortedBooks);
+    } else if (sortType === "publishYear") {
+      const sortedBooks = readWishList.sort((a, b) =>
+        a.yearOfPublishing > b.yearOfPublishing
+          ? -1
+          : a.yearOfPublishing < b.yearOfPublishing
+          ? 1
+          : 0
+      );
+
+      setSortedWishBooks(sortedBooks);
+    }
+  };
 
   return (
     <div className="mt-8">
@@ -29,13 +122,34 @@ const ListedBooks = () => {
             className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-40 "
           >
             <li className="mx-auto">
-              <a>Rating</a>
+              <a
+                onClick={() => {
+                  handleSort("rating");
+                  handleWishSort("rating");
+                }}
+              >
+                Rating
+              </a>
             </li>
             <li className="mx-auto">
-              <a>Number of pages</a>
+              <a
+                onClick={() => {
+                  handleSort("pages");
+                  handleWishSort("pages");
+                }}
+              >
+                Number of pages
+              </a>
             </li>
             <li className="mx-auto">
-              <a>Published year</a>
+              <a
+                onClick={() => {
+                  handleSort("publishYear");
+                  handleWishSort("publishYear");
+                }}
+              >
+                Published year
+              </a>
             </li>
           </ul>
         </div>
@@ -49,17 +163,13 @@ const ListedBooks = () => {
         </TabList>
 
         <TabPanel>
-          {readBooks.map((id, i) => {
-            const readBook = jsonData.find((book) => book.bookId == id);
-
-            return <Card key={i} readBook={readBook}></Card>;
+          {sortedReadBooks.map((book, i) => {
+            return <Card key={i} readBook={book}></Card>;
           })}
         </TabPanel>
         <TabPanel>
-          {wishlistBooks.map((id, i) => {
-            const wishlistBook = jsonData.find((book) => book.bookId == id);
-
-            return <Card key={i} readBook={wishlistBook}></Card>;
+          {sortedWishBooks.map((book, i) => {
+            return <Card key={i} readBook={book}></Card>;
           })}
         </TabPanel>
       </Tabs>
