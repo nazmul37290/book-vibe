@@ -43,15 +43,15 @@ const BookDetails = () => {
     yearOfPublishing,
   } = bookDetails || {};
   return (
-    <div className="grid grid-cols-2 mt-16">
+    <div className="grid lg:grid-cols-2 mt-16">
       <div className=" flex justify-center items-center h-full">
         <img
           src={image}
-          className="w-full h-full p-16 object-cover"
+          className="w-full h-full p-5 lg:p-16 object-cover"
           alt="Album"
         />
       </div>
-      <div className="card-body">
+      <div className="card-body p-2 lg:p-8 ">
         <h2 className="card-title text-3xl font-bold p-2">{bookName}</h2>
         <h2 className="font-semibold p-2">By: {author}</h2>
         <h2 className=" border-y-2 p-2 text-lg">{category}</h2>
@@ -71,7 +71,7 @@ const BookDetails = () => {
               </span>
             ))}
         </p>
-        <div className="border-t-2 p-4 mt-3">
+        <div className="border-t-2 lg:p-4 mt-3">
           <table>
             <tr className="h-8">
               <td>Number of Pages:</td>
