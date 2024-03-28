@@ -30,7 +30,7 @@ const Navbar = () => {
           </div>
           <ul
             tabIndex={0}
-            className="menu menu-sm gap-2 dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
+            className="menu  gap-2 dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
           >
             {routes.map((route, i) => (
               <li key={i}>
@@ -44,6 +44,12 @@ const Navbar = () => {
                 </NavLink>
               </li>
             ))}
+            <li className="lg:hidden">
+              <a className="btn bg-green-500 text-white">Sign In</a>
+            </li>
+            <li className="lg:hidden">
+              <a className="btn bg-blue-400 text-white">Sign Up</a>
+            </li>
           </ul>
         </div>
         <a className="btn btn-ghost text-2xl font-bold">Book Vibe</a>
@@ -66,7 +72,7 @@ const Navbar = () => {
           ))}
         </ul>
       </div>
-      <div className="navbar-end gap-4">
+      <div className="navbar-end hidden lg:flex gap-1 lg:gap-4">
         <a className="btn bg-green-500 text-white">Sign In</a>
         <a className="btn bg-blue-400 text-white">Sign Up</a>
       </div>

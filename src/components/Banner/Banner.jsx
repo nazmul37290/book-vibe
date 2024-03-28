@@ -3,11 +3,14 @@ import { Link } from "react-router-dom";
 const Banner = () => {
   return (
     <div>
-      <div className="hero space-y-5 rounded-2xl p-16 bg-base-200">
+      <div className="hero space-y-5 rounded-2xl p-2 lg:p-16 bg-base-200">
         <div className="hero-content flex-col lg:flex-row-reverse">
-          <img src="bannerbook.png" className="max-w-sm  rounded-lg " />
+          <img
+            src="bannerbook.png"
+            className="w-auto lg:max-w-sm  rounded-lg "
+          />
           <div>
-            <h1 className="text-5xl font-bold mb-10">
+            <h1 className="text-2xl lg:text-5xl font-bold mb-10">
               Books to freshen up your bookshelf
             </h1>
 

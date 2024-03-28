@@ -20,7 +20,7 @@ const Card = ({ readBook }) => {
   } = readBook || {};
   return (
     <div>
-      <div className="card grid grid-cols-3 card-side bg-base-100 mt-2 border-2 shadow-xl p-5">
+      <div className="card grid lg:grid-cols-3 card-side bg-base-100 mt-2 border-2 shadow-xl p-0 lg:p-5">
         <div className="h-72 w-full col-span-1 ">
           <img
             className="rounded-2xl w-full h-72 object-cover"
@@ -28,11 +28,11 @@ const Card = ({ readBook }) => {
             alt="Movie"
           />
         </div>
-        <div className="card-body col-span-2">
+        <div className="card-body p-2 col-span-2">
           <h2 className="card-title text-2xl font-bold">{bookName}</h2>
           <div className="h-fit">By: {author}</div>
-          <div className="flex gap-2">
-            <div>
+          <div className="flex flex-col lg:flex-row gap-2">
+            <div className="flex flex-col lg:flex-row gap-2">
               <span className="font-bold">Tag:</span>
               {tags &&
                 tags.map((tag, i) => (

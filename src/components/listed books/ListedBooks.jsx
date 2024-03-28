@@ -108,7 +108,7 @@ const ListedBooks = () => {
       <h1 className="text-3xl text-center font-bold p-10 bg-gray-100 rounded-2xl">
         Books
       </h1>
-      <div className="flex justify-center mt-4">
+      <div className="flex justify-center mb-4 mt-4">
         <div className="dropdown dropdown-bottom">
           <div
             tabIndex={0}

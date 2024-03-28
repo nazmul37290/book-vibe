@@ -6,7 +6,7 @@ const Book = ({ book }) => {
 
   return (
     <Link to={`/book/${bookId}`}>
-      <div className="card md:h-[600px] lg:h-auto bg-base-100 shadow-xl">
+      <div className="card md:h-[600px] bg-base-100 shadow-xl">
         <div className="w-full px-5 pt-5 object-cover">
           <img src={image} className="rounded-xl w-full h-72  object-cover " />
         </div>
